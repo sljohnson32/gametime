@@ -1,4 +1,12 @@
-#game {
+body {
+  width: 900px;
+}
 
+header {
+  text-align: center;
+}
+
+#game {
+  margin:25px 0 0 100px;
   border: 5px solid black;
 }
