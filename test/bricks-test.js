@@ -5,6 +5,16 @@ var Bricks = require('../lib/bricks');
 
 describe('Bricks', function(){
   context('with default attributes', function() {
+    var bricks = new Brick ({});
 
+    it('should be a function', function(){
+      assert.isFunction(Brick);
+    });
+
+    it('should have an empty brickArray by default', function() {
+      assert.equal(Brick.brickArray, []);
+    });
+
+    it('should have a brickAlive value of ')
   });
 });
