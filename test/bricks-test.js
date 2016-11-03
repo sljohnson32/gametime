@@ -1,9 +1,9 @@
 var chai = require('chai');
 var assert = chai.assert;
 var stub = require('./support/stub');
-var Paddle = require('../lib/paddle');
+var Bricks = require('../lib/bricks');
 
-describe('Paddle', function(){
+describe('Bricks', function(){
   context('with default attributes', function() {
 
   });
