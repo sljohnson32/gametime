@@ -11,11 +11,16 @@ describe('Brick', function(){
     });
 
     it('should assign an x value to the brick', function () {
+      var brick = new Brick(75, 25);
       assert.equal(Brick.x, this.x);
     });
 
     it('should assign a y value to the brick', function () {
       assert.equal(Brick.y, this.y);
+    });
+
+    it('should be alive by default', function() {
+      assert.equal(Brick.alive, this.alive);
     });
 
     // it('should have an empty brickArray by default', function() {
