@@ -11,8 +11,8 @@ describe('Brick', function(){
     });
 
     it('should assign an x value to the brick', function () {
-      var brick = new Brick(75, 25);
-      assert.equal(Brick.x, this.x);
+      var brick = new Brick();
+      assert.equal(brick.x, this.x);
     });
 
     it('should assign a y value to the brick', function () {
