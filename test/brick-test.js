@@ -21,7 +21,12 @@ describe('Brick', function(){
     it('should be alive by default', function() {
       assert.equal(brick.alive, true);
     });
+  });
+});
 
+    describe(' ', function(){
+      context('on destroyBrick', function() {
+        var brick = new Brick(25, 100);
     it('should have an alive value of false when destroyed', function (){
       brick.destroyBrick();
       assert.equal(brick.alive, false);
