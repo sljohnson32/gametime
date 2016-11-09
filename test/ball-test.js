@@ -11,15 +11,15 @@ describe('Ball', function(){
     });
 
     it('has a canvas property', function() {
-      assert.property(ball.cvs, 'canvas');
+      assert.property(ball, 'cvs');
     });
 
     it('has a context property', function() {
-      assert.property(ball, 'context');
+      assert.property(ball, 'ctx');
     });
 
     it('has a paddle property', function() {
-      assert.property(ball, 'paddle');
+      assert.property(ball, 'pad');
     });
 
     it('has a radius property set to 15 when instantiated', function() {
