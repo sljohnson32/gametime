@@ -22,9 +22,7 @@ describe('Brick', function(){
       assert.equal(brick.alive, true);
     });
   });
-});
 
-describe(' ', function(){
   context('on destroyBrick', function() {
     var brick = new Brick(25, 100);
 
