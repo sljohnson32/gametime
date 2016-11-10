@@ -106,14 +106,14 @@ describe('Ball', function(){
     var ball = new Ball({width: 700, height: 550}, {}, {h: 10, w: 200, x: 250}, {});
 
     it('should return true if ball hits the bottom of the canvas at 1 life', function() {
-      this.y = 549;
-      this.dirY = 6;
+      ball.y = 549;
+      ball.dirY = 6;
       assert.equal(ball.bottomCollision(550, 1), true);
     });
 
     it('should return false if ball hits the bottom of the canvas if you have 2 or more lives', function() {
-      this.y = 549;
-      this.dirY = 6;
+      ball.y = 549;
+      ball.dirY = 6;
       assert.equal(ball.bottomCollision(550, 2), false);
     });
   });
