@@ -35,6 +35,10 @@ describe('Scoreboard', function(){
     scoreboard.bricksAlive = 14;
     scoreboard.levelReset();
 
+    it('should be a function', function() {
+      assert.isFunction(scoreboard.levelReset);
+    });
+
     it('should increase level by 1 on levelReset', function(){
       scoreboard.levelReset();
       assert.equal(scoreboard.level, 3);
@@ -53,6 +57,10 @@ describe('Scoreboard', function(){
     scoreboard.bricksDestroyed = 10;
     scoreboard.bricksAlive = 14;
     scoreboard.fullReset();
+
+    it('should be a function', function() {
+      assert.isFunction(scoreboard.fullReset);
+    });
 
     it('should default to level 1 on fullReset', function() {
 
@@ -73,5 +81,30 @@ describe('Scoreboard', function(){
 
       assert.equal(scoreboard.bricksDestroyed, 0);
     });
+  });
+
+  context('canvas text display', function() {
+    var scoreboard = new Scoreboard();
+
+    it('should be a function (scoreText)', function() {
+      assert.isFunction(scoreboard.scoreText);
+    });
+
+    it('should be a function (levelText)', function() {
+      assert.isFunction(scoreboard.levelText);
+    });
+
+    it('should be a function (livesText)', function() {
+      assert.isFunction(scoreboard.livesText);
+    });
+
+    it('should be a function (modeText)', function() {
+      assert.isFunction(scoreboard.modeText);
+    });
+
+    it('should be a function (textUpdate)', function() {
+      assert.isFunction(scoreboard.textUpdate);
+    });
+
   });
 });
