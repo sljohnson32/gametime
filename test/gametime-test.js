@@ -31,7 +31,7 @@ describe('Game', function() {
     });
 
     it('should have a default gameMode of 0', function () {
-      // assert.property(game.gameMode, 0);
+      assert.equal(game.gameMode, 0);
     });
 
     it('should have a default rightPressed value of 0', function () {
@@ -40,10 +40,6 @@ describe('Game', function() {
 
     it('should have a default leftPressed value of 0', function () {
       assert.equal(game.leftPressed, false);
-    });
-
-    it('should have an empty brickArray by default', function () {
-      // assert.equal(game.brickArray, []);
     });
 
     it('should have 4 brickRows by default', function () {
@@ -65,58 +61,9 @@ describe('Game', function() {
 
   context('on ballRectCollision (ball missing brick)', function() {
     var game = new Game({}, {width:700, height:550});
-    var bricksDestroyed = 0;
-    var bricksAlive = 24;
-    var playerLives = 3;
-    var brickAlive = true;
 
     it('should be a function', function() {
       assert.isFunction(game.ballRectCollision);
-    });
-
-    it('should NOT change bricksDestroyed value if brick is missed', function() {
-      game.ballRectCollision();
-      assert.equal(bricksDestroyed, 0);
-    });
-
-    it('should NOT change bricksAlive value if brick is missed', function() {
-      game.ballRectCollision();
-      assert.equal(bricksAlive, 24);
-    });
-
-    it('should NOT change playerLive value if brick is missed', function() {
-      game.ballRectCollision();
-      assert.equal(playerLives, 3);
-    });
-  });
-
-    context('on ballRectCollision (ball hitting brick)', function() {
-      var game = new Game({}, {width:700, height:550});
-      var bricksDestroyed = 0;
-      var bricksAlive = 24;
-      var playerLives = 3;
-      var brickAlive = true;
-
-    it('should change bricksDestroyed value if brick is hit', function() {
-      // game.distX =
-      // game.disty =
-      // game.ball.x =
-      // game.ball.y =
-      // game.brick.x =
-      // game.brick.y =
-      console.log(game.brick.x);
-      game.ballRectCollision();
-      assert.equal(brickAlive, 23);
-    });
-
-    it('should change brickAlive value if brick is hit', function() {
-      game.ballRectCollision();
-
-    });
-
-    it('should change playerLive value if brick is hit', function() {
-      game.ballRectCollision();
-
     });
   });
 
@@ -130,34 +77,14 @@ describe('Game', function() {
 
   context('on populateBrickArray', function() {
     var game = new Game({}, {width:700, height:550});
-    game.c = 0;
-    game.r = 0;
-    game.brickColumns = 1;
-    game.brickRows = 1;
-
 
     it('should be a function', function() {
       assert.isFunction(game.populateBrickArray);
     });
 
-    it('should create new bricks if missing bricks in rows/columns', function() {
+    it('should add 6 new bricks to brickArray', function() {
       game.populateBrickArray();
-      assert.lengthOf(game.brickArray, 1);
-    });
-
-    it('should have a brickPad of 10', function () {
-      game.populateBrickArray();
-      assert.equal(game.brickPad, 10);
-    });
-
-    it('should have a brickMarginTop of 60', function () {
-      game.populateBrickArray();
-      // assert.equal(game.brickMarginTop, 100);
-    });
-
-    it('should have a brickMarginLeft of 25', function () {
-      game.populateBrickArray();
-      // assert.equal(game.brickMarginLeft, 25);
+      assert.lengthOf(game.brickArray, 6);
     });
   });
 
@@ -225,30 +152,6 @@ describe('Game', function() {
 
     it('should be a function(gameTime)', function() {
       assert.isFunction(game.gameTime);
-    });
-
-    it('', function () {
-
-    });
-
-    it('', function () {
-
-    });
-
-    it('', function () {
-
-    });
-
-    it('', function () {
-
-    });
-
-    it('', function () {
-
-    });
-
-    it('', function () {
-
     });
   });
 });
