@@ -142,7 +142,6 @@ describe('Game', function() {
 
     it('should create new bricks if missing bricks in rows/columns', function() {
       game.populateBrickArray();
-      // console.log(game.brickArray);
       assert.lengthOf(game.brickArray, 1);
     });
 

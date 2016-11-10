@@ -38,6 +38,10 @@ describe('Ball', function(){
   context('on action', function() {
     var ball = new Ball({width: 700, height: 550}, {}, {h: 10, w: 200, x: 250}, {});
 
+    it('should be a function', function() {
+      assert.isFunction(ball.action);
+    });
+
     it('should have x property aligned with paddle when gameMode is set to 0', function() {
       ball.action(0);
       assert.equal(ball.x, 350);
@@ -66,6 +70,10 @@ describe('Ball', function(){
 
   context('on paddleBounce', function() {
     var ball = new Ball({width: 700, height: 550}, {}, {h: 10, w: 200, x: 250}, {});
+
+    it('should be a function', function() {
+      assert.isFunction(ball.paddleBounce);
+    });
 
     it('should have a property dirY that reverses when ball hits the top of canvas', function() {
       ball.y = 5;
@@ -104,6 +112,10 @@ describe('Ball', function(){
 
   context('on bottomCollision', function() {
     var ball = new Ball({width: 200, height: 200}, {}, {h: 10});
+
+    it('should be a function', function() {
+      assert.isFunction(ball.bottomCollision);
+    });
 
     it('should return true if ball hits the bottom of the canvas at 1 life', function() {
 

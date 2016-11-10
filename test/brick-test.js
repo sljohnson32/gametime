@@ -26,6 +26,10 @@ describe('Brick', function(){
   context('on destroyBrick', function() {
     var brick = new Brick(25, 100);
 
+    it('should be a function', function() {
+      assert.isFunction(Brick);
+    });
+
     it('should have an alive value of false when destroyed', function () {
       brick.destroyBrick();
       assert.equal(brick.alive, false);
