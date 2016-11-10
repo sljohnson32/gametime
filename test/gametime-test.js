@@ -63,7 +63,7 @@ describe('Game', function() {
     });
   });
 
-  context('on ballRectCollision (ball hitting brick)', function() {
+  context('on ballRectCollision (ball missing brick)', function() {
     var game = new Game({}, {width:700, height:550});
     var bricksDestroyed = 0;
     var bricksAlive = 24;
@@ -81,17 +81,32 @@ describe('Game', function() {
 
     it('should NOT change bricksAlive value if brick is missed', function() {
       game.ballRectCollision();
-
+      assert.equal(bricksAlive, 24);
     });
 
     it('should NOT change playerLive value if brick is missed', function() {
       game.ballRectCollision();
-
+      assert.equal(playerLives, 3);
     });
+  });
+
+    context('on ballRectCollision (ball hitting brick)', function() {
+      var game = new Game({}, {width:700, height:550});
+      var bricksDestroyed = 0;
+      var bricksAlive = 24;
+      var playerLives = 3;
+      var brickAlive = true;
 
     it('should change bricksDestroyed value if brick is hit', function() {
+      // game.distX =
+      // game.disty =
+      // game.ball.x =
+      // game.ball.y =
+      // game.brick.x =
+      // game.brick.y =
+      console.log(game.brick.x);
       game.ballRectCollision();
-      assert.equal(brickAlive, true);
+      assert.equal(brickAlive, 23);
     });
 
     it('should change brickAlive value if brick is hit', function() {
@@ -127,12 +142,12 @@ describe('Game', function() {
 
     it('should create new bricks if missing bricks in rows/columns', function() {
       game.populateBrickArray();
-      assert.equal(game.brickArray, [1])
+      // console.log(game.brickArray);
+      assert.lengthOf(game.brickArray, 1);
     });
 
     it('should have a brickPad of 10', function () {
       game.populateBrickArray();
-      console.log(game.brickArray);
       assert.equal(game.brickPad, 10);
     });
 
@@ -166,6 +181,7 @@ describe('Game', function() {
       game.ball.y = 543;
       game.ball.dirY = 6;
       game.score.playerLives = 3;
+      assert.equal(game.score.playerLives, 3);
       game.passedBall();
       game.ball.action(1);
       game.passedBall();
