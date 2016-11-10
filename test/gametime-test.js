@@ -62,9 +62,7 @@ describe('Game', function() {
       assert.equal(game.brickHeight, 25);
     });
   });
-});
 
-describe(' ', function() {
   context('on ballRectCollision (ball hitting brick)', function() {
     var game = new Game({}, {});
 
@@ -78,23 +76,21 @@ describe(' ', function() {
 
     });
   });
-});
 
-describe(' ', function() {
   context('on drawBricks', function() {
     var game = new Game({}, {});
 
     it('should add a column if the number of columns is less than brickColumns', function() {
+      game.drawBricks();
 
     });
 
     it('should add a row if the number of rows is less than brickRows', function() {
+      game.drawBricks();
 
     });
   });
-});
 
-describe(' ', function() {
   context('on populateBrickArray', function() {
     var game = new Game({}, {});
 
@@ -113,11 +109,47 @@ describe(' ', function() {
 
     });
   });
-});
 
-describe(' ', function() {
+  context('on passedBall functions', function() {
+    var game = new Game({}, {});
+
+    it('', function () {
+      game.passedBall();
+
+    });
+
+    it('', function () {
+      game.passedBall();
+
+    });
+  });
+
   context('on gameMode functions', function() {
     var game = new Game({}, {});
-    
+
+    it('', function () {
+
+    });
+
+    it('', function () {
+
+    });
+
+    it('', function () {
+
+    });
+
+    it('', function () {
+
+    });
+
+    it('', function () {
+
+    });
+
+    it('', function () {
+
+    });
+
   });
 });
