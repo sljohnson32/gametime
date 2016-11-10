@@ -10,19 +10,19 @@ describe('Ball', function(){
       assert.isFunction(Ball);
     });
 
-    it('has a canvas property', function() {
+    it('should have a canvas property', function() {
       assert.property(ball, 'cvs');
     });
 
-    it('has a context property', function() {
+    it('should have a context property', function() {
       assert.property(ball, 'ctx');
     });
 
-    it('has a paddle property', function() {
+    it('should have a paddle property', function() {
       assert.property(ball, 'pad');
     });
 
-    it('has a radius property set to 15 when instantiated', function() {
+    it('should have a radius property set to 15 when instantiated', function() {
       assert.equal(ball.radius, 15);
     });
 
@@ -34,13 +34,7 @@ describe('Ball', function(){
       assert.equal(ball.y, 175);
     });
   });
-});
 
-var chai = require('chai');
-var assert = chai.assert;
-var Ball = require('../lib/ball');
-
-describe(' ', function(){
   context('on action', function() {
     var ball = new Ball({width: 200, height: 200}, {}, {h: 10});
 
@@ -51,16 +45,8 @@ describe(' ', function(){
     it('should be moving if gameMode is 1', function() {
 
     });
-
-
   });
-});
 
-var chai = require('chai');
-var assert = chai.assert;
-var Ball = require('../lib/ball');
-
-describe(' ', function(){
   context('on paddleBounce', function() {
     var ball = new Ball({width: 200, height: 200}, {}, {h: 10});
 
@@ -83,16 +69,8 @@ describe(' ', function(){
     it('', function() {
 
     });
-
-
   });
-});
 
-var chai = require('chai');
-var assert = chai.assert;
-var Ball = require('../lib/ball');
-
-describe(' ', function(){
   context('on bottomCollision', function() {
     var ball = new Ball({width: 200, height: 200}, {}, {h: 10});
 
@@ -103,7 +81,5 @@ describe(' ', function(){
     it('should return false if ball hits the bottom of the canvas if you have 2 or more lives', function() {
 
     });
-
-
   });
 });
