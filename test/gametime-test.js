@@ -31,7 +31,7 @@ describe('Game', function() {
     });
 
     it('should have a default gameMode of 0', function () {
-      // assert.property(game.gameMode, 0);
+      assert.equal(game.gameMode, 0);
     });
 
     it('should have a default rightPressed value of 0', function () {
@@ -40,10 +40,6 @@ describe('Game', function() {
 
     it('should have a default leftPressed value of 0', function () {
       assert.equal(game.leftPressed, false);
-    });
-
-    it('should have an empty brickArray by default', function () {
-      // assert.equal(game.brickArray, []);
     });
 
     it('should have 4 brickRows by default', function () {
