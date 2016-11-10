@@ -34,4 +34,30 @@ describe('paddle', function(){
       assert.equal(paddle.y, 385);
     });
   });
+
+  context('on draw', function() {
+    var paddle = new Paddle({width: 700, height: 550}, {}, {});
+
+    it('should be a function', function() {
+      assert.isFunction(paddle.draw);
+    });
+  });
+
+  context('on move', function() {
+    var paddle = new Paddle({width: 700, height: 550}, {}, {});
+
+    it('should be a function', function() {
+      assert.isFunction(paddle.move);
+    });
+
+    it('should have x property that increments by 10 when right arrow is pressed', function() {
+      paddle.move(true, false);
+      assert.equal(paddle.x, 260);
+    });
+
+    it('should have x property that decrements by 10 when left arrow is pressed', function() {
+      paddle.move(false, true);
+      assert.equal(paddle.x, 250);
+    });
+  });
 });
