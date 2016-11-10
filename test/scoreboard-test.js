@@ -26,9 +26,7 @@ describe('Scoreboard', function(){
       assert.equal(scoreboard.level, 1);
     });
   });
-});
 
-describe(' ', function(){
   context('on levelReset', function() {
     var scoreboard = new Scoreboard();
     scoreboard.level = 1;
@@ -47,9 +45,7 @@ describe(' ', function(){
       assert.equal(scoreboard.bricksAlive, 24);
     });
   });
-});
 
-describe(' ', function(){
   context('on fullReset', function() {
     var scoreboard = new Scoreboard();
     scoreboard.level = 2;
