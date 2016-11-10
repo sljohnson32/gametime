@@ -4,7 +4,7 @@ var Ball = require('../lib/ball');
 
 describe('Ball', function(){
   context('with default attributes', function() {
-    var ball = new Ball({width: 200, height: 200}, {}, {h: 10});
+    var ball = new Ball({width: 700, height: 550}, {}, {h: 10});
 
     it('should be a function', function() {
       assert.isFunction(Ball);
@@ -27,47 +27,78 @@ describe('Ball', function(){
     });
 
     it('should have an x property equal to half the canvas width', function() {
-      assert.equal(ball.x, 100);
+      assert.equal(ball.x, 350);
     });
 
     it('should have a y property equal to the canvas height less the paddle height and its radius', function() {
-      assert.equal(ball.y, 175);
+      assert.equal(ball.y, 525);
     });
   });
 
   context('on action', function() {
-    var ball = new Ball({width: 200, height: 200}, {}, {h: 10});
+    var ball = new Ball({width: 700, height: 550}, {}, {h: 10, w: 200, x: 250}, {});
 
-    it('should be in the center of the paddle if gameMode is 0, 2, or 3', function() {
-
+    it('should have x property aligned with paddle when gameMode is set to 0', function() {
+      ball.action(0);
+      assert.equal(ball.x, 350);
     });
 
-    it('should be moving if gameMode is 1', function() {
+    it('should have x property aligned with paddle when gameMode is set to 2', function() {
+      ball.action(2);
+      assert.equal(ball.x, 350);
+    });
 
+    it('should have x property aligned with paddle when gameMode is set to 3', function() {
+      ball.action(3);
+      assert.equal(ball.x, 350);
+    });
+
+    it('should have x property that is incrementing by 6 when gameMode is equal to 1', function() {
+      ball.action(1);
+      assert.equal(ball.x, 356);
+    });
+
+    it('should have y property that is decrementing by 6 when gameMode is equal to 1', function() {
+      ball.action(1);
+      assert.equal(ball.y, 513);
     });
   });
 
   context('on paddleBounce', function() {
-    var ball = new Ball({width: 200, height: 200}, {}, {h: 10});
+    var ball = new Ball({width: 700, height: 550}, {}, {h: 10, w: 200, x: 250}, {});
 
-    it('', function() {
-
+    it('should have a property dirY that reverses when ball hits the top of canvas', function() {
+      ball.y = 5;
+      ball.bounceTop();
+      assert.equal(ball.dirY, 6);
     });
 
-    it('', function() {
-
+    it('should have a property dirX that gets set to negative when ballhits the right side of the canvas', function() {
+      ball.x = 680;
+      ball.bounceSide();
+      assert.equal(ball.dirX, -6);
     });
 
-    it('', function() {
-
+    it('should have a property dirX that gets set to positive when ball hits the left side of the canvas', function() {
+      ball.x = 20;
+      ball.bounceSide();
+      assert.equal(ball.dirX, 6);
     });
 
-    it('', function() {
-
+    it('should have a property of dirY that gets set to negative when it hits the left side of the paddle', function() {
+      ball.y = 540;
+      ball.x = 255;
+      ball.dirX = 6;
+      ball.paddleBounce();
+      assert.equal(ball.dirY, -6);
     });
 
-    it('', function() {
-
+    it('should have a property of dirX that gets reversed when it hits the right side of the paddle', function() {
+      ball.y = 540;
+      ball.x = 445;
+      ball.dirX = -6;
+      ball.paddleBounce();
+      assert.equal(ball.dirX, 6);
     });
   });
 
