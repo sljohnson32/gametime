@@ -10,19 +10,19 @@ describe('Ball', function(){
       assert.isFunction(Ball);
     });
 
-    it('has a canvas property', function() {
+    it('should have a canvas property', function() {
       assert.property(ball, 'cvs');
     });
 
-    it('has a context property', function() {
+    it('should have a context property', function() {
       assert.property(ball, 'ctx');
     });
 
-    it('has a paddle property', function() {
+    it('should have a paddle property', function() {
       assert.property(ball, 'pad');
     });
 
-    it('has a radius property set to 15 when instantiated', function() {
+    it('should have a radius property set to 15 when instantiated', function() {
       assert.equal(ball.radius, 15);
     });
 
