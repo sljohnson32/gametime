@@ -1,6 +1,11 @@
-# Game Time Starter Kit
+# Breakout
+#### Brick breaker game web application built using vanilla javascript and jQuery.  This was a group project at the end of Module 1 at Turing School of Software & Design.
 
-To install the dependencies:
+## Project Screen Shots
+
+![My image](./screenshot.png)
+
+## To install the dependencies:
 
 ```
 npm install
