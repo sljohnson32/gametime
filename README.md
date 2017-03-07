@@ -1,7 +1,7 @@
 # Breakout
 #### Brick breaker game web application built using vanilla javascript and jQuery.  This was a group project at the end of Module 1 at Turing School of Software & Design.
 
-## Project Screen Shots
+## Project Screen Shot
 
 ![My image](./screenshot.png)
 
